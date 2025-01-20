@@ -1,0 +1,124 @@
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: radial-gradient(circle, #000, #050d1a, #0a1c35, #122d4d, #1b3e65);
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+}
+
+/* Solar System Container */
+.solar-system {
+  position: relative;
+  width: 600px;
+  height: 600px;
+  perspective: 1000px;
+}
+
+/* The Sun */
+.sun {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, #ffcc00, #ff9900, #ff6600);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 50px 20px rgba(255, 204, 0, 0.6);
+  animation: spin 10s linear infinite;
+}
+
+/* Orbits */
+.orbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border: 1px dashed rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: orbit-spin linear infinite;
+}
+
+.orbit.mercury {
+  width: 150px;
+  height: 150px;
+  animation-duration: 8s;
+}
+
+.orbit.venus {
+  width: 250px;
+  height: 250px;
+  animation-duration: 12s;
+}
+
+.orbit.earth {
+  width: 350px;
+  height: 350px;
+  animation-duration: 16s;
+}
+
+.orbit.mars {
+  width: 450px;
+  height: 450px;
+  animation-duration: 20s;
+}
+
+/* Planets */
+.planet {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: spin 4s linear infinite reverse;
+}
+
+.planet.mercury {
+  background: #b4b4b4;
+  box-shadow: 0 0 10px 2px rgba(180, 180, 180, 0.7);
+}
+
+.planet.venus {
+  background: #ff9f00;
+  box-shadow: 0 0 10px 2px rgba(255, 159, 0, 0.7);
+}
+
+.planet.earth {
+  background: #1e90ff;
+  box-shadow: 0 0 10px 2px rgba(30, 144, 255, 0.7);
+}
+
+.planet.mars {
+  background: #ff4500;
+  box-shadow: 0 0 10px 2px rgba(255, 69, 0, 0.7);
+}
+
+/* Animations */
+@keyframes spin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes orbit-spin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
